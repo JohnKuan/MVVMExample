@@ -15,6 +15,8 @@
 		47B49E022101818F0080BC46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47B49E012101818F0080BC46 /* Assets.xcassets */; };
 		47B49E052101818F0080BC46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47B49E032101818F0080BC46 /* LaunchScreen.storyboard */; };
 		47B49E102101818F0080BC46 /* MVVMExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49E0F2101818F0080BC46 /* MVVMExampleTests.swift */; };
+		47B49E1C2101877E0080BC46 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49E1B2101877E0080BC46 /* Protocols.swift */; };
+		47B49E1E210189980080BC46 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B49E1D210189980080BC46 /* SearchViewModel.swift */; };
 		E9AB6491865B61317B4D7F5D /* Pods_MVVMExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17110AD8FBDC16AA796AD4C8 /* Pods_MVVMExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,8 @@
 		47B49E0B2101818F0080BC46 /* MVVMExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVVMExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		47B49E0F2101818F0080BC46 /* MVVMExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVMExampleTests.swift; sourceTree = "<group>"; };
 		47B49E112101818F0080BC46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47B49E1B2101877E0080BC46 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		47B49E1D210189980080BC46 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		86374684C381F37136DE54CB /* Pods-MVVMExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMExample/Pods-MVVMExample.debug.xcconfig"; sourceTree = "<group>"; };
 		96E76372A561260051A95E9A /* Pods-MVVMExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMExampleTests/Pods-MVVMExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		993A205285A5D4281613E2DA /* Pods_MVVMExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,12 +116,13 @@
 			isa = PBXGroup;
 			children = (
 				47B49DF82101818C0080BC46 /* AppDelegate.swift */,
-				47B49DFA2101818C0080BC46 /* FirstViewController.swift */,
-				47B49DFC2101818C0080BC46 /* SecondViewController.swift */,
+				47B49E1A210187170080BC46 /* ViewControllers */,
 				47B49DFE2101818C0080BC46 /* Main.storyboard */,
 				47B49E012101818F0080BC46 /* Assets.xcassets */,
 				47B49E032101818F0080BC46 /* LaunchScreen.storyboard */,
 				47B49E062101818F0080BC46 /* Info.plist */,
+				47B49E1B2101877E0080BC46 /* Protocols.swift */,
+				47B49E1D210189980080BC46 /* SearchViewModel.swift */,
 			);
 			path = MVVMExample;
 			sourceTree = "<group>";
@@ -129,6 +134,15 @@
 				47B49E112101818F0080BC46 /* Info.plist */,
 			);
 			path = MVVMExampleTests;
+			sourceTree = "<group>";
+		};
+		47B49E1A210187170080BC46 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				47B49DFA2101818C0080BC46 /* FirstViewController.swift */,
+				47B49DFC2101818C0080BC46 /* SecondViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,12 +253,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MVVMExample/Pods-MVVMExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bond/Bond.framework",
+				"${BUILT_PRODUCTS_DIR}/CoreStore/CoreStore.framework",
 				"${BUILT_PRODUCTS_DIR}/Differ/Differ.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveKit/ReactiveKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bond.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CoreStore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differ.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveKit.framework",
 			);
@@ -297,8 +313,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				47B49DFD2101818C0080BC46 /* SecondViewController.swift in Sources */,
+				47B49E1E210189980080BC46 /* SearchViewModel.swift in Sources */,
 				47B49DF92101818C0080BC46 /* AppDelegate.swift in Sources */,
 				47B49DFB2101818C0080BC46 /* FirstViewController.swift in Sources */,
+				47B49E1C2101877E0080BC46 /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
